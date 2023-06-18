@@ -1,5 +1,5 @@
 # PIC16F877A_ServoMotor_Compare
-# Created 06/18/2023
+## Created 06/18/2023
 
 This project is to prototype the ability to control the position of the MG 90 RC servo motor, using timer and compare module to approximate the PWM pulse with the typical frequency of 50Hz.
 
