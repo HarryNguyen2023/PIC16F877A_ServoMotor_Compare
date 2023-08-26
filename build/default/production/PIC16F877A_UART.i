@@ -1,4 +1,4 @@
-# 1 "XC8_Servo_Compare.c"
+# 1 "PIC16F877A_UART.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,8 +6,11 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "XC8_Servo_Compare.c" 2
-# 1 "./XC8_Servo_Compare.h" 1
+# 1 "PIC16F877A_UART.c" 2
+# 1 "./PIC16F877A_UART.h" 1
+
+
+
 # 1 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -1854,69 +1857,140 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 2 3
-# 1 "./XC8_Servo_Compare.h" 2
+# 4 "./PIC16F877A_UART.h" 2
 
 
 
 
 
-uint16_t TIME1 = 55536;
-uint16_t DC_RANGE = 10000;
+static uint16_t uart_str_idx = 0;
+
+void UARTTransInit(void);
+void UARTRcvInit(void);
+void UARTTransRcvInit(void);
+void UARTsendChar(char c);
+void UARTsendString(char *str);
+char UARTrcvChar(void);
+int UARTrcvString(char *rcv_buffer, uint16_t length);
+# 1 "PIC16F877A_UART.c" 2
 
 
-void Timer1_Init(void);
-void Compare_Init(void);
-void Servo_Init(void);
-void ServoAngle(uint8_t angle);
-# 1 "XC8_Servo_Compare.c" 2
 
 
 
-void Timer1_Init()
+void UARTTransInit()
 {
 
-    TMR1 = TIME1;
+    TRISC6 = 1;
+    TRISC7 = 1;
 
-    T1CKPS1 = 1;
-    T1CKPS0 = 1;
+    SPEN = 1;
 
-    TMR1CS = 0;
-    TMR1ON = 1;
+    SYNC = 0;
 
-    TMR1IF = 0;
-    TMR1IE = 1;
+    TX9 = 0;
+
+    TXEN = 1;
+
+    BRGH = 1;
+    SPBRG = ((16000000) / 57600) / 16 - 1;
+}
+
+
+void UARTRcvInit()
+{
+
+    TRISC6 = 1;
+    TRISC7 = 1;
+
+    SPEN = 1;
+
+    SYNC = 0;
+
+    RX9 = 0;
+
+    CREN = 1;
+
+    BRGH = 1;
+    SPBRG = ((16000000) / 57600) / 16 - 1;
+
+    RCIE = 1;
     PEIE = 1;
     GIE = 1;
 }
 
 
-void Compare_Init()
+void UARTTransRcvInit()
 {
 
-    CCP1M3 = 1;
-    CCP1M2 = 0;
-    CCP1M1 = 0;
-    CCP1M0 = 1;
+    TRISC6 = 1;
+    TRISC7 = 1;
 
-    CCPR1 = TIME1 + (DC_RANGE / 20);
+    SPEN = 1;
+
+    SYNC = 0;
+
+    TX9 = 0;
+    RX9 = 0;
+
+    TXEN = 1;
+    CREN = 1;
+
+    BRGH = 1;
+    SPBRG = ((16000000) / 57600) / 16 - 1;
+
+    RCIE = 1;
+    PEIE = 1;
+    GIE = 1;
 }
 
 
-void Servo_Init()
+void UARTsendChar(char c)
 {
 
-    TRISC2 = 0;
-    RC2 = 1;
-    Timer1_Init();
-    Compare_Init();
+    while (! TRMT);
+    TXREG = c;
 }
 
 
-void ServoAngle(uint8_t angle)
+void UARTsendString(char *str)
 {
-    if(angle <= 180)
+    for (int i = 0; str[i] != '\0'; ++i)
+        UARTsendChar(str[i]);
+}
+
+
+char UARTrcvChar()
+{
+
+    if (OERR)
     {
-        uint16_t dc = (uint16_t)((100 * angle) / 36.0) + TIME1 + (DC_RANGE / 20);
-        CCPR1 = dc;
+        CREN = 0;
+        CREN = 1;
+    }
+    char c = RCREG;
+    return c;
+}
+
+
+int UARTrcvString(char *rcv_buffer, uint16_t length)
+{
+
+    if (OERR)
+    {
+        CREN = 0;
+        CREN = 1;
+    }
+    if (uart_str_idx == length - 1)
+    {
+        rcv_buffer[uart_str_idx++] = UARTrcvChar();
+        rcv_buffer[uart_str_idx] = '\0';
+        uart_str_idx = 0;
+        return 1;
+    }
+    else
+    {
+        rcv_buffer[uart_str_idx++] = UARTrcvChar();
+        return 0;
     }
 }

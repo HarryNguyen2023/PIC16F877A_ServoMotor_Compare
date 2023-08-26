@@ -3,8 +3,13 @@
 [d edition pro ]
 [d chip 16F877A ]
 [d frameptr 0 ]
-"505 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\doprnt.c
-[v _sprintf sprintf `(i  1 e 2 0 ]
+"23 C:\Users\84935\MPLABXProjects\PIC16F877A_ServoMotor_Compare.X\ServoMotor_Compare.c
+[e E878 timer1_prescaler `uc
+TIMER1_DIV_1 0
+TIMER1_DIV_2 1
+TIMER1_DIV_4 2
+TIMER1_DIV_8 3
+]
 "43 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\fltol.c
 [v ___fltol __fltol `(l  1 e 4 0 ]
 [v i1___fltol __fltol `(l  1 e 4 0 ]
@@ -30,43 +35,49 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"24 C:\Users\84935\MPLABXProjects\PIC16F877A_ServoMotor_Compare.X\ServoMotor_Compare.c
-[v _UART_Pos UART_Pos `(v  1 e 1 0 ]
-"48
-[v _PosControl_Pot PosControl_Pot `(v  1 e 1 0 ]
-"63
-[v _ISR ISR `II(v  1 e 1 0 ]
-"97
-[v _main main `(v  1 e 1 0 ]
-"4 C:\Users\84935\MPLABXProjects\PIC16F877A_ServoMotor_Compare.X\UART.c
-[v _UART_Init UART_Init `(v  1 e 1 0 ]
-"28
-[v _UART_sendChar UART_sendChar `(v  1 e 1 0 ]
-[v i1_UART_sendChar UART_sendChar `(v  1 e 1 0 ]
-"35
-[v _UART_sendByte UART_sendByte `(v  1 e 1 0 ]
-"42
-[v _UART_sendString UART_sendString `(v  1 e 1 0 ]
-[v i1_UART_sendString UART_sendString `(v  1 e 1 0 ]
-"5 C:\Users\84935\MPLABXProjects\PIC16F877A_ServoMotor_Compare.X\XC8_ADC.c
+"5 C:\Users\84935\MPLABXProjects\PIC16F877A_ServoMotor_Compare.X\PIC16F877A_ADC.c
+[v _ADC_setInput ADC_setInput `(v  1 s 1 ADC_setInput ]
+"43
 [v _ADC_Init ADC_Init `(v  1 e 1 0 ]
-"12
+"53
 [v _ADC_Read ADC_Read `(ui  1 e 2 0 ]
-"4 C:\Users\84935\MPLABXProjects\PIC16F877A_ServoMotor_Compare.X\XC8_Servo_Compare.c
-[v _Timer1_Init Timer1_Init `(v  1 e 1 0 ]
-"22
-[v _Compare_Init Compare_Init `(v  1 e 1 0 ]
-"34
-[v _Servo_Init Servo_Init `(v  1 e 1 0 ]
-"44
-[v _ServoAngle ServoAngle `(v  1 e 1 0 ]
-[v i1_ServoAngle ServoAngle `(v  1 e 1 0 ]
-"6 C:\Users\84935\MPLABXProjects\PIC16F877A_ServoMotor_Compare.X/XC8_Servo_Compare.h
+"29 C:\Users\84935\MPLABXProjects\PIC16F877A_ServoMotor_Compare.X\PIC16F877A_ServoMotor_Compare.c
+[v _ISR ISR `II(v  1 e 1 0 ]
+"51
+[v _main main `(v  1 e 1 0 ]
+"71
+[v _positionControl positionControl `(v  1 e 1 0 ]
+"96
+[v _adcPosControl adcPosControl `(v  1 e 1 0 ]
+"4 C:\Users\84935\MPLABXProjects\PIC16F877A_ServoMotor_Compare.X\PIC16F877A_timer_1.c
+[v _timer1TimerInit timer1TimerInit `(v  1 e 1 0 ]
+"48 C:\Users\84935\MPLABXProjects\PIC16F877A_ServoMotor_Compare.X\PIC16F877A_UART.c
+[v _UARTTransRcvInit UARTTransRcvInit `(v  1 e 1 0 ]
+"73
+[v _UARTsendChar UARTsendChar `(v  1 e 1 0 ]
+"81
+[v _UARTsendString UARTsendString `(v  1 e 1 0 ]
+"88
+[v _UARTrcvChar UARTrcvChar `(uc  1 e 1 0 ]
+"4 C:\Users\84935\MPLABXProjects\PIC16F877A_ServoMotor_Compare.X\ServoMotor_Compare.c
+[v _compareInit compareInit `(v  1 s 1 compareInit ]
+"16
+[v _servoInit servoInit `(v  1 e 1 0 ]
+"29
+[v _servoAngle servoAngle `(v  1 e 1 0 ]
+[v i1_servoAngle servoAngle `(v  1 e 1 0 ]
+"39
+[v _servoShiftHigh servoShiftHigh `(v  1 e 1 0 ]
+"9 C:\Users\84935\MPLABXProjects\PIC16F877A_ServoMotor_Compare.X/PIC16F877A_UART.h
+[v _uart_str_idx uart_str_idx `ui  1 s 2 uart_str_idx ]
+"11 C:\Users\84935\MPLABXProjects\PIC16F877A_ServoMotor_Compare.X/ServoMotor_compare.h
 [v _TIME1 TIME1 `ui  1 e 2 0 ]
-"7
+"12
 [v _DC_RANGE DC_RANGE `ui  1 e 2 0 ]
 "635 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h
 [v _TMR1 TMR1 `VEus  1 e 2 @14 ]
+"656
+[v _T1CON T1CON `VEuc  1 e 1 @16 ]
 "886
 [v _CCPR1 CCPR1 `VEus  1 e 2 @21 ]
 "907
@@ -79,14 +90,14 @@
 [v _ADRESH ADRESH `VEuc  1 e 1 @30 ]
 "1160
 [v _ADCON0 ADCON0 `VEuc  1 e 1 @31 ]
-[s S182 . 1 `uc 1 ADON 1 0 :1:0 
+[s S39 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 GO_nDONE 1 0 :1:2 
 `uc 1 CHS 1 0 :3:3 
 `uc 1 ADCS 1 0 :2:6 
 ]
 "1191
-[s S188 . 1 `uc 1 . 1 0 :2:0 
+[s S45 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 GO 1 0 :1:2 
 `uc 1 CHS0 1 0 :1:3 
 `uc 1 CHS1 1 0 :1:4 
@@ -94,26 +105,14 @@
 `uc 1 ADCS0 1 0 :1:6 
 `uc 1 ADCS1 1 0 :1:7 
 ]
-[s S196 . 1 `uc 1 . 1 0 :2:0 
+[s S53 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nDONE 1 0 :1:2 
 ]
-[s S199 . 1 `uc 1 . 1 0 :2:0 
+[s S56 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 GO_DONE 1 0 :1:2 
 ]
-[u S202 . 1 `S182 1 . 1 0 `S188 1 . 1 0 `S196 1 . 1 0 `S199 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES202  1 e 1 @31 ]
-[s S96 . 1 `uc 1 TRISC0 1 0 :1:0 
-`uc 1 TRISC1 1 0 :1:1 
-`uc 1 TRISC2 1 0 :1:2 
-`uc 1 TRISC3 1 0 :1:3 
-`uc 1 TRISC4 1 0 :1:4 
-`uc 1 TRISC5 1 0 :1:5 
-`uc 1 TRISC6 1 0 :1:6 
-`uc 1 TRISC7 1 0 :1:7 
-]
-"1455
-[u S105 . 1 `S96 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES105  1 e 1 @135 ]
+[u S59 . 1 `S39 1 . 1 0 `S45 1 . 1 0 `S53 1 . 1 0 `S56 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES59  1 e 1 @31 ]
 "2081
 [v _SPBRG SPBRG `VEuc  1 e 1 @153 ]
 "2223
@@ -152,10 +151,8 @@
 [v _SPEN SPEN `VEb  1 e 0 @199 ]
 "2847
 [v _SYNC SYNC `VEb  1 e 0 @1220 ]
-"2862
-[v _T1CKPS0 T1CKPS0 `VEb  1 e 0 @132 ]
-"2865
-[v _T1CKPS1 T1CKPS1 `VEb  1 e 0 @133 ]
+"2871
+[v _T1OSCEN T1OSCEN `VEb  1 e 0 @131 ]
 "2889
 [v _TMR1CS TMR1CS `VEb  1 e 0 @129 ]
 "2892
@@ -164,120 +161,84 @@
 [v _TMR1IF TMR1IF `VEb  1 e 0 @96 ]
 "2898
 [v _TMR1ON TMR1ON `VEb  1 e 0 @128 ]
+"2922
+[v _TRISA0 TRISA0 `VEb  1 e 0 @1064 ]
+"2925
+[v _TRISA1 TRISA1 `VEb  1 e 0 @1065 ]
+"2928
+[v _TRISA2 TRISA2 `VEb  1 e 0 @1066 ]
+"2931
+[v _TRISA3 TRISA3 `VEb  1 e 0 @1067 ]
+"2937
+[v _TRISA5 TRISA5 `VEb  1 e 0 @1069 ]
 "2970
 [v _TRISC2 TRISC2 `VEb  1 e 0 @1082 ]
+"2982
+[v _TRISC6 TRISC6 `VEb  1 e 0 @1086 ]
+"2985
+[v _TRISC7 TRISC7 `VEb  1 e 0 @1087 ]
+"3012
+[v _TRISE0 TRISE0 `VEb  1 e 0 @1096 ]
+"3015
+[v _TRISE1 TRISE1 `VEb  1 e 0 @1097 ]
+"3018
+[v _TRISE2 TRISE2 `VEb  1 e 0 @1098 ]
+"3021
+[v _TRMT TRMT `VEb  1 e 0 @1217 ]
 "3027
 [v _TX9 TX9 `VEb  1 e 0 @1222 ]
 "3036
 [v _TXEN TXEN `VEb  1 e 0 @1221 ]
-"3042
-[v _TXIF TXIF `VEb  1 e 0 @100 ]
-"19 C:\Users\84935\MPLABXProjects\PIC16F877A_ServoMotor_Compare.X\ServoMotor_Compare.c
-[v _rcvStr rcvStr `[17]uc  1 e 17 0 ]
-"20
-[v _command command `uc  1 e 1 0 ]
+"18 C:\Users\84935\MPLABXProjects\PIC16F877A_ServoMotor_Compare.X\PIC16F877A_ServoMotor_Compare.c
+[v _adc_channels adc_channels `[1]uc  1 e 1 0 ]
 "21
 [v _mode mode `uc  1 e 1 0 ]
-"97
+"51
 [v _main main `(v  1 e 1 0 ]
 {
-"112
+"68
 } 0
-"42 C:\Users\84935\MPLABXProjects\PIC16F877A_ServoMotor_Compare.X\UART.c
-[v _UART_sendString UART_sendString `(v  1 e 1 0 ]
+"16 C:\Users\84935\MPLABXProjects\PIC16F877A_ServoMotor_Compare.X\ServoMotor_Compare.c
+[v _servoInit servoInit `(v  1 e 1 0 ]
 {
-[v UART_sendString@str str `*.26uc  1 p 2 1 ]
-"48
+"26
 } 0
-"28
-[v _UART_sendChar UART_sendChar `(v  1 e 1 0 ]
+"4 C:\Users\84935\MPLABXProjects\PIC16F877A_ServoMotor_Compare.X\PIC16F877A_timer_1.c
+[v _timer1TimerInit timer1TimerInit `(v  1 e 1 0 ]
 {
-[v UART_sendChar@data data `uc  1 a 1 wreg ]
-[v UART_sendChar@data data `uc  1 a 1 wreg ]
-[v UART_sendChar@data data `uc  1 a 1 0 ]
-"32
+[v timer1TimerInit@prescaler prescaler `uc  1 a 1 wreg ]
+[v timer1TimerInit@prescaler prescaler `uc  1 a 1 wreg ]
+"7
+[v timer1TimerInit@prescaler prescaler `uc  1 a 1 1 ]
+"17
 } 0
-"4
-[v _UART_Init UART_Init `(v  1 e 1 0 ]
+"4 C:\Users\84935\MPLABXProjects\PIC16F877A_ServoMotor_Compare.X\ServoMotor_Compare.c
+[v _compareInit compareInit `(v  1 s 1 compareInit ]
 {
-"25
-} 0
-"34 C:\Users\84935\MPLABXProjects\PIC16F877A_ServoMotor_Compare.X\XC8_Servo_Compare.c
-[v _Servo_Init Servo_Init `(v  1 e 1 0 ]
-{
-"41
-} 0
-"4
-[v _Timer1_Init Timer1_Init `(v  1 e 1 0 ]
-{
-"19
-} 0
-"22
-[v _Compare_Init Compare_Init `(v  1 e 1 0 ]
-{
-"31
-} 0
-"48 C:\Users\84935\MPLABXProjects\PIC16F877A_ServoMotor_Compare.X\ServoMotor_Compare.c
-[v _PosControl_Pot PosControl_Pot `(v  1 e 1 0 ]
-{
-"56
-[v PosControl_Pot@adc_val adc_val `f  1 a 4 0 ]
-"51
-[v PosControl_Pot@adc adc `ui  1 a 2 4 ]
-"52
-[v PosControl_Pot@adc_angle adc_angle `uc  1 a 1 6 ]
-"60
-} 0
-"8 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\sprcmul.c
-[v ___flmul __flmul `(d  1 e 4 0 ]
-{
-[s S554 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S559 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
-[u S562 . 4 `l 1 i 4 0 `d 1 f 4 0 `S554 1 fAsBytes 4 0 `S559 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S562  1 a 4 66 ]
-"12
-[v ___flmul@grs grs `ul  1 a 4 60 ]
-[s S631 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
-"14
-[u S634 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S631 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S634  1 a 2 70 ]
-"10
-[v ___flmul@bexp bexp `uc  1 a 1 65 ]
-"11
-[v ___flmul@aexp aexp `uc  1 a 1 64 ]
-"9
-[v ___flmul@sign sign `uc  1 a 1 59 ]
-"8
-[v ___flmul@b b `d  1 p 4 46 ]
-[v ___flmul@a a `d  1 p 4 50 ]
-"205
 } 0
-"4 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\Umul8_16.c
-[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"96 C:\Users\84935\MPLABXProjects\PIC16F877A_ServoMotor_Compare.X\PIC16F877A_ServoMotor_Compare.c
+[v _adcPosControl adcPosControl `(v  1 e 1 0 ]
 {
-[v __Umul8_16@multiplier multiplier `uc  1 a 1 wreg ]
-"6
-[v __Umul8_16@word_mpld word_mpld `ui  1 a 2 6 ]
-"5
-[v __Umul8_16@product product `ui  1 a 2 4 ]
-"4
-[v __Umul8_16@multiplier multiplier `uc  1 a 1 wreg ]
-[v __Umul8_16@multiplicand multiplicand `uc  1 p 1 0 ]
-[v __Umul8_16@multiplier multiplier `uc  1 a 1 8 ]
-"60
+"101
+[v adcPosControl@adc_val adc_val `f  1 a 4 72 ]
+"99
+[v adcPosControl@pot_value pot_value `ui  1 a 2 76 ]
+"102
+[v adcPosControl@adc_angle adc_angle `uc  1 a 1 78 ]
+"104
 } 0
-"44 C:\Users\84935\MPLABXProjects\PIC16F877A_ServoMotor_Compare.X\XC8_Servo_Compare.c
-[v _ServoAngle ServoAngle `(v  1 e 1 0 ]
+"29 C:\Users\84935\MPLABXProjects\PIC16F877A_ServoMotor_Compare.X\ServoMotor_Compare.c
+[v _servoAngle servoAngle `(v  1 e 1 0 ]
 {
-[v ServoAngle@angle angle `uc  1 a 1 wreg ]
-"48
-[v ServoAngle@dc dc `ui  1 a 2 64 ]
-"44
-[v ServoAngle@angle angle `uc  1 a 1 wreg ]
-"46
-[v ServoAngle@angle angle `uc  1 a 1 66 ]
-"51
+[v servoAngle@angle angle `uc  1 a 1 wreg ]
+"33
+[v servoAngle@duty_cycle duty_cycle `ui  1 a 2 64 ]
+"29
+[v servoAngle@angle angle `uc  1 a 1 wreg ]
+"31
+[v servoAngle@angle angle `uc  1 a 1 66 ]
+"36
 } 0
 "10 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
@@ -346,74 +307,114 @@
 [v ___fldiv@b b `d  1 p 4 24 ]
 "185
 } 0
-"12 C:\Users\84935\MPLABXProjects\PIC16F877A_ServoMotor_Compare.X\XC8_ADC.c
+"8 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+{
+[s S528 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+"13
+[s S533 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
+[u S536 . 4 `l 1 i 4 0 `d 1 f 4 0 `S528 1 fAsBytes 4 0 `S533 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S536  1 a 4 66 ]
+"12
+[v ___flmul@grs grs `ul  1 a 4 60 ]
+[s S605 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+"14
+[u S608 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S605 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S608  1 a 2 70 ]
+"10
+[v ___flmul@bexp bexp `uc  1 a 1 65 ]
+"11
+[v ___flmul@aexp aexp `uc  1 a 1 64 ]
+"9
+[v ___flmul@sign sign `uc  1 a 1 59 ]
+"8
+[v ___flmul@b b `d  1 p 4 46 ]
+[v ___flmul@a a `d  1 p 4 50 ]
+"205
+} 0
+"4 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+{
+[v __Umul8_16@multiplier multiplier `uc  1 a 1 wreg ]
+"6
+[v __Umul8_16@word_mpld word_mpld `ui  1 a 2 6 ]
+"5
+[v __Umul8_16@product product `ui  1 a 2 4 ]
+"4
+[v __Umul8_16@multiplier multiplier `uc  1 a 1 wreg ]
+[v __Umul8_16@multiplicand multiplicand `uc  1 p 1 0 ]
+[v __Umul8_16@multiplier multiplier `uc  1 a 1 8 ]
+"60
+} 0
+"53 C:\Users\84935\MPLABXProjects\PIC16F877A_ServoMotor_Compare.X\PIC16F877A_ADC.c
 [v _ADC_Read ADC_Read `(ui  1 e 2 0 ]
 {
-[v ADC_Read@ANC ANC `uc  1 a 1 wreg ]
-[v ADC_Read@ANC ANC `uc  1 a 1 wreg ]
-"14
-[v ADC_Read@ANC ANC `uc  1 a 1 3 ]
-"28
+[v ADC_Read@adc_channel adc_channel `uc  1 a 1 wreg ]
+[v ADC_Read@adc_channel adc_channel `uc  1 a 1 wreg ]
+"55
+[v ADC_Read@adc_channel adc_channel `uc  1 a 1 3 ]
+"69
 } 0
-"5
+"48 C:\Users\84935\MPLABXProjects\PIC16F877A_ServoMotor_Compare.X\PIC16F877A_UART.c
+[v _UARTTransRcvInit UARTTransRcvInit `(v  1 e 1 0 ]
+{
+"70
+} 0
+"43 C:\Users\84935\MPLABXProjects\PIC16F877A_ServoMotor_Compare.X\PIC16F877A_ADC.c
 [v _ADC_Init ADC_Init `(v  1 e 1 0 ]
 {
-"9
+[v ADC_Init@adc_channel adc_channel `*.4uc  1 a 1 wreg ]
+[v ADC_Init@adc_channel adc_channel `*.4uc  1 a 1 wreg ]
+[v ADC_Init@len len `uc  1 p 1 6 ]
+"46
+[v ADC_Init@adc_channel adc_channel `*.4uc  1 a 1 7 ]
+"50
 } 0
-"63 C:\Users\84935\MPLABXProjects\PIC16F877A_ServoMotor_Compare.X\ServoMotor_Compare.c
+"5
+[v _ADC_setInput ADC_setInput `(v  1 s 1 ADC_setInput ]
+{
+[v ADC_setInput@adc_channel adc_channel `*.4uc  1 a 1 wreg ]
+"7
+[v ADC_setInput@i i `uc  1 a 1 5 ]
+"5
+[v ADC_setInput@adc_channel adc_channel `*.4uc  1 a 1 wreg ]
+[v ADC_setInput@len len `uc  1 p 1 0 ]
+"7
+[v ADC_setInput@adc_channel adc_channel `*.4uc  1 a 1 4 ]
+"38
+} 0
+"29 C:\Users\84935\MPLABXProjects\PIC16F877A_ServoMotor_Compare.X\PIC16F877A_ServoMotor_Compare.c
 [v _ISR ISR `II(v  1 e 1 0 ]
 {
-"95
+"40
+[v ISR@command command `uc  1 a 1 58 ]
+"49
 } 0
-"505 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\doprnt.c
-[v _sprintf sprintf `(i  1 e 2 0 ]
+"39 C:\Users\84935\MPLABXProjects\PIC16F877A_ServoMotor_Compare.X\ServoMotor_Compare.c
+[v _servoShiftHigh servoShiftHigh `(v  1 e 1 0 ]
 {
-[v sprintf@sp sp `*.5uc  1 a 1 wreg ]
-"512
-[v sprintf@c c `uc  1 a 1 6 ]
-"507
-[v sprintf@ap ap `[1]*.1v  1 a 1 5 ]
-"505
-[v sprintf@sp sp `*.5uc  1 a 1 wreg ]
-[v sprintf@f f `*.24DCuc  1 p 1 0 ]
-"550
-[v sprintf@sp sp `*.5uc  1 a 1 7 ]
-"1567
+"49
 } 0
-"24 C:\Users\84935\MPLABXProjects\PIC16F877A_ServoMotor_Compare.X\ServoMotor_Compare.c
-[v _UART_Pos UART_Pos `(v  1 e 1 0 ]
+"71 C:\Users\84935\MPLABXProjects\PIC16F877A_ServoMotor_Compare.X\PIC16F877A_ServoMotor_Compare.c
+[v _positionControl positionControl `(v  1 e 1 0 ]
 {
-[v UART_Pos@com com `uc  1 a 1 wreg ]
-[v UART_Pos@com com `uc  1 a 1 wreg ]
-"26
-[v UART_Pos@com com `uc  1 a 1 53 ]
-"45
+[v positionControl@com com `uc  1 a 1 wreg ]
+[v positionControl@com com `uc  1 a 1 wreg ]
+"73
+[v positionControl@com com `uc  1 a 1 53 ]
+"93
 } 0
-"42 C:\Users\84935\MPLABXProjects\PIC16F877A_ServoMotor_Compare.X\UART.c
-[v i1_UART_sendString UART_sendString `(v  1 e 1 0 ]
+"29 C:\Users\84935\MPLABXProjects\PIC16F877A_ServoMotor_Compare.X\ServoMotor_Compare.c
+[v i1_servoAngle servoAngle `(v  1 e 1 0 ]
 {
-[v i1UART_sendString@str str `*.26uc  1 p 2 1 ]
-"48
-} 0
-"28
-[v i1_UART_sendChar UART_sendChar `(v  1 e 1 0 ]
-{
-[v i1UART_sendChar@data data `uc  1 a 1 wreg ]
-[v i1UART_sendChar@data data `uc  1 a 1 wreg ]
-[v i1UART_sendChar@data data `uc  1 a 1 0 ]
-"32
-} 0
-"44 C:\Users\84935\MPLABXProjects\PIC16F877A_ServoMotor_Compare.X\XC8_Servo_Compare.c
-[v i1_ServoAngle ServoAngle `(v  1 e 1 0 ]
-{
-[v i1ServoAngle@angle angle `uc  1 a 1 wreg ]
-"48
-[v i1ServoAngle@dc dc `ui  1 a 2 50 ]
-"44
-[v i1ServoAngle@angle angle `uc  1 a 1 wreg ]
-"46
-[v i1ServoAngle@angle angle `uc  1 a 1 52 ]
-"51
+[v i1servoAngle@angle angle `uc  1 a 1 wreg ]
+"33
+[v i1servoAngle@duty_cycle duty_cycle `ui  1 a 2 50 ]
+"29
+[v i1servoAngle@angle angle `uc  1 a 1 wreg ]
+"31
+[v i1servoAngle@angle angle `uc  1 a 1 52 ]
+"36
 } 0
 "10 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\xxtofl.c
 [v i1___xxtofl __xxtofl `(d  1 e 4 0 ]
@@ -481,4 +482,31 @@
 [v i1___fldiv@a a `d  1 p 4 6 ]
 [v i1___fldiv@b b `d  1 p 4 10 ]
 "185
+} 0
+"81 C:\Users\84935\MPLABXProjects\PIC16F877A_ServoMotor_Compare.X\PIC16F877A_UART.c
+[v _UARTsendString UARTsendString `(v  1 e 1 0 ]
+{
+[v UARTsendString@str str `*.24uc  1 a 1 wreg ]
+"83
+[v UARTsendString@i i `i  1 a 2 1 ]
+"81
+[v UARTsendString@str str `*.24uc  1 a 1 wreg ]
+"83
+[v UARTsendString@str str `*.24uc  1 a 1 3 ]
+"85
+} 0
+"73
+[v _UARTsendChar UARTsendChar `(v  1 e 1 0 ]
+{
+[v UARTsendChar@c c `uc  1 a 1 wreg ]
+[v UARTsendChar@c c `uc  1 a 1 wreg ]
+[v UARTsendChar@c c `uc  1 a 1 0 ]
+"78
+} 0
+"88
+[v _UARTrcvChar UARTrcvChar `(uc  1 e 1 0 ]
+{
+"96
+[v UARTrcvChar@c c `uc  1 a 1 0 ]
+"98
 } 0

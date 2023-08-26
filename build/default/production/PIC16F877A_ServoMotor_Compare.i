@@ -1,4 +1,4 @@
-# 1 "UART.c"
+# 1 "PIC16F877A_ServoMotor_Compare.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,9 +6,25 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "UART.c" 2
-# 1 "./UART.h" 1
-# 34 "./UART.h"
+# 1 "PIC16F877A_ServoMotor_Compare.c" 2
+# 1 "./config.h" 1
+
+
+
+
+#pragma config FOSC = HS
+#pragma config WDTE = OFF
+#pragma config PWRTE = OFF
+#pragma config BOREN = ON
+#pragma config LVP = ON
+#pragma config CPD = OFF
+#pragma config WRT = OFF
+#pragma config CP = OFF
+
+
+
+
+
 # 1 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -1855,68 +1871,267 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 2 3
-# 34 "./UART.h" 2
-# 84 "./UART.h"
-void UART_Init(void);
-void UART_sendChar(char data);
-void UART_sendByte(uint8_t data);
-void UART_sendString(char* str);
-void UART_sendData(uint8_t* str, uint8_t len);
-# 1 "UART.c" 2
+# 17 "./config.h" 2
+# 1 "PIC16F877A_ServoMotor_Compare.c" 2
+
+# 1 "./ServoMotor_compare.h" 1
 
 
 
-void UART_Init(void)
+# 1 "./PIC16F877A_timer_1.h" 1
+
+
+
+
+
+
+enum timer1_prescaler
 {
+    TIMER1_DIV_1,
+    TIMER1_DIV_2,
+    TIMER1_DIV_4,
+    TIMER1_DIV_8
+};
 
-    TRISCbits.TRISC6 = 1;
-    TRISCbits.TRISC7 = 1;
 
-    SPBRG = ((16000000 / 16) / 9600) - 1;
-    BRGH = 1;
+enum counter_sync
+{
+    COUNTER_SYNC,
+    COUNTER_ASYNC
+};
 
-    SYNC = 0;
-    SPEN = 1;
+void timer1TimerInit(uint8_t prescaler);
+void timer1CounterInit(uint8_t prescaler, uint8_t sync);
+uint16_t timer1Read(void);
+# 4 "./ServoMotor_compare.h" 2
 
-    RCIE = 1;
-    PEIE = 1;
-    GIE = 1;
 
-    TXEN = 1;
-    CREN = 1;
 
-    TX9 = 0;
-    RX9 = 0;
+
+
+
+
+uint16_t TIME1 = 55536;
+uint16_t DC_RANGE = 10000;
+
+void servoInit(void);
+void servoAngle(uint8_t angle);
+void servoShiftHigh(void);
+# 2 "PIC16F877A_ServoMotor_Compare.c" 2
+
+# 1 "./PIC16F877A_ADC.h" 1
+
+
+
+
+
+
+
+
+void ADC_Init(uint8_t* adc_channel, uint8_t len);
+uint16_t ADC_Read(uint8_t adc_channel);
+float ADC_lm35toDeg(uint16_t negative_deg, uint16_t positive_deg);
+# 3 "PIC16F877A_ServoMotor_Compare.c" 2
+
+# 1 "./PIC16F877A_UART.h" 1
+
+
+
+
+
+
+
+
+static uint16_t uart_str_idx = 0;
+
+void UARTTransInit(void);
+void UARTRcvInit(void);
+void UARTTransRcvInit(void);
+void UARTsendChar(char c);
+void UARTsendString(char *str);
+char UARTrcvChar(void);
+int UARTrcvString(char *rcv_buffer, uint16_t length);
+# 4 "PIC16F877A_ServoMotor_Compare.c" 2
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\stdio.h" 1 3
+
+
+
+# 1 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\__size_t.h" 1 3
+
+
+
+typedef unsigned size_t;
+# 5 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\stdio.h" 2 3
+# 1 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\__null.h" 1 3
+# 6 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\stdio.h" 2 3
+
+
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\stdarg.h" 1 3
+
+
+
+
+
+
+typedef void * va_list[1];
+
+#pragma intrinsic(__va_start)
+extern void * __va_start(void);
+
+#pragma intrinsic(__va_arg)
+extern void * __va_arg(void *, ...);
+# 12 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\stdio.h" 2 3
+# 43 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\stdio.h" 3
+struct __prbuf
+{
+ char * ptr;
+ void (* func)(char);
+};
+# 85 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\stdio.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\conio.h" 1 3
+
+
+
+
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\errno.h" 1 3
+# 29 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\errno.h" 3
+extern int errno;
+# 9 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\conio.h" 2 3
+
+
+
+extern void init_uart(void);
+
+extern char getch(void);
+extern char getche(void);
+extern void putch(char);
+extern void ungetch(char);
+
+extern __bit kbhit(void);
+
+
+
+extern char * cgets(char *);
+extern void cputs(const char *);
+# 86 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\stdio.h" 2 3
+
+
+extern int cprintf(char *, ...);
+#pragma printf_check(cprintf)
+
+
+
+extern int _doprnt(struct __prbuf *, const register char *, register va_list);
+# 180 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\stdio.h" 3
+#pragma printf_check(vprintf) const
+#pragma printf_check(vsprintf) const
+
+extern char * gets(char *);
+extern int puts(const char *);
+extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
+extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
+extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
+extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
+extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
+extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
+
+#pragma printf_check(printf) const
+#pragma printf_check(sprintf) const
+extern int sprintf(char *, const char *, ...);
+extern int printf(const char *, ...);
+# 5 "PIC16F877A_ServoMotor_Compare.c" 2
+# 18 "PIC16F877A_ServoMotor_Compare.c"
+uint8_t adc_channels[1] = {0};
+
+
+uint8_t mode = 0;
+
+
+void positionControl(uint8_t com);
+void adcPosControl(void);
+
+
+
+void __attribute__((picinterrupt(("")))) ISR(void){
+
+    if(TMR1IF)
+    {
+
+        servoShiftHigh();
+
+        TMR1IF = 0;
+    }
+
+    if(RCIF){
+        uint8_t command = UARTrcvChar();
+        if(command == 97)
+            mode = 0;
+        else
+        {
+            mode = 1;
+            positionControl(command);
+        }
+    }
+}
+
+void main(void) {
+
+    UARTTransRcvInit();
+
+    ADC_Init(adc_channels, 1);
+
+    servoInit();
+
+
+    while(1)
+    {
+        if(mode == 0){
+            adcPosControl();
+            _delay((unsigned long)((250)*(16000000/4000.0)));
+        }
+    }
+    return;
 }
 
 
-void UART_sendChar(char data)
+void positionControl(uint8_t com)
 {
-   while (!TXIF);
-   TXREG = data;
+    if(com == 48)
+        servoAngle(0);
+    else if(com == 49)
+        servoAngle(30);
+    else if(com == 50)
+        servoAngle(45);
+    else if(com == 51)
+        servoAngle(90);
+    else if(com == 52)
+        servoAngle(120);
+    else if(com == 53)
+        servoAngle(150);
+    else if(com == 54)
+        servoAngle(180);
+    else
+    {
+        UARTsendString("Invalid input!\r\n");
+        return;
+    }
+    UARTsendString("Completed!\r\n");
 }
 
 
-void UART_sendByte(uint8_t data)
+void adcPosControl()
 {
-   while (!TXIF);
-   TXREG = data;
-}
 
+    uint16_t pot_value = ADC_Read(0);
 
-void UART_sendString(char* str)
-{
-   while (*str)
-   {
-       UART_sendChar(*str++);
-   }
-}
-
-
-void UART_sendData(uint8_t* str, uint8_t len)
-{
-   for(int i = 0; i < len; ++i)
-   {
-       UART_sendByte(str[i]);
-   }
+    float adc_val = (pot_value / 1023.0f) * 180;
+    uint8_t adc_angle = (uint8_t)adc_val;
+    servoAngle(adc_angle);
 }

@@ -1,4 +1,4 @@
-# 1 "ServoMotor_Compare.c"
+# 1 "PIC16F877A_timer_1.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,11 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "ServoMotor_Compare.c" 2
-# 1 "./ServoMotor_compare.h" 1
-
-
-
+# 1 "PIC16F877A_timer_1.c" 2
 # 1 "./PIC16F877A_timer_1.h" 1
 
 
@@ -1883,67 +1879,40 @@ enum counter_sync
 void timer1TimerInit(uint8_t prescaler);
 void timer1CounterInit(uint8_t prescaler, uint8_t sync);
 uint16_t timer1Read(void);
-# 4 "./ServoMotor_compare.h" 2
+# 1 "PIC16F877A_timer_1.c" 2
 
 
 
-
-
-
-
-uint16_t TIME1 = 55536;
-uint16_t DC_RANGE = 10000;
-
-void servoInit(void);
-void servoAngle(uint8_t angle);
-void servoShiftHigh(void);
-# 1 "ServoMotor_Compare.c" 2
-
-
-
-static void compareInit()
+void timer1TimerInit(uint8_t prescaler)
 {
 
-    CCP1M3 = 1;
-    CCP1M2 = 0;
-    CCP1M1 = 0;
-    CCP1M0 = 1;
+    T1CON |= prescaler << 4;
 
-    CCPR1 = TIME1 + (DC_RANGE / 20);
+    TMR1CS = 0;
+
+    TMR1ON = 1;
+
+    TMR1IF = 0;
+    TMR1IE = 1;
+    PEIE = 1;
+    GIE = 1;
 }
 
 
-void servoInit()
+void timer1CounterInit(uint8_t prescaler, uint8_t sync)
 {
 
-    TRISC2 = 0;
-    RC2 = 1;
+    T1CON |= prescaler << 4;
 
-    TMR1 = TIME1;
-    timer1TimerInit(TIMER1_DIV_8);
+    TMR1CS = 1;
 
-    compareInit();
+    T1OSCEN = (sync) ? 1 : 0;
+
+    TMR1ON = 1;
 }
 
 
-void servoAngle(uint8_t angle)
+uint16_t timer1Read()
 {
-    if(angle <= 180)
-    {
-        uint16_t duty_cycle = (uint16_t)((100 * angle) / 36.0) + TIME1 + (DC_RANGE / 20);
-        CCPR1 = duty_cycle;
-    }
-}
-
-
-void servoShiftHigh()
-{
-
-    TMR1 = TIME1;
-
-    CCP1CON = 0x00;
-
-    RC2 = 1;
-
-    CCP1CON = 0x09;
+    return TMR1;
 }

@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=ServoMotor_Compare.c UART.c XC8_Servo_Compare.c XC8_ADC.c
+SOURCEFILES_QUOTED_IF_SPACED=PIC16F877A_ADC.c PIC16F877A_UART.c PIC16F877A_timer_1.c PIC16F877A_ServoMotor_Compare.c ServoMotor_Compare.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/ServoMotor_Compare.p1 ${OBJECTDIR}/UART.p1 ${OBJECTDIR}/XC8_Servo_Compare.p1 ${OBJECTDIR}/XC8_ADC.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/ServoMotor_Compare.p1.d ${OBJECTDIR}/UART.p1.d ${OBJECTDIR}/XC8_Servo_Compare.p1.d ${OBJECTDIR}/XC8_ADC.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/PIC16F877A_ADC.p1 ${OBJECTDIR}/PIC16F877A_UART.p1 ${OBJECTDIR}/PIC16F877A_timer_1.p1 ${OBJECTDIR}/PIC16F877A_ServoMotor_Compare.p1 ${OBJECTDIR}/ServoMotor_Compare.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/PIC16F877A_ADC.p1.d ${OBJECTDIR}/PIC16F877A_UART.p1.d ${OBJECTDIR}/PIC16F877A_timer_1.p1.d ${OBJECTDIR}/PIC16F877A_ServoMotor_Compare.p1.d ${OBJECTDIR}/ServoMotor_Compare.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/ServoMotor_Compare.p1 ${OBJECTDIR}/UART.p1 ${OBJECTDIR}/XC8_Servo_Compare.p1 ${OBJECTDIR}/XC8_ADC.p1
+OBJECTFILES=${OBJECTDIR}/PIC16F877A_ADC.p1 ${OBJECTDIR}/PIC16F877A_UART.p1 ${OBJECTDIR}/PIC16F877A_timer_1.p1 ${OBJECTDIR}/PIC16F877A_ServoMotor_Compare.p1 ${OBJECTDIR}/ServoMotor_Compare.p1
 
 # Source Files
-SOURCEFILES=ServoMotor_Compare.c UART.c XC8_Servo_Compare.c XC8_ADC.c
+SOURCEFILES=PIC16F877A_ADC.c PIC16F877A_UART.c PIC16F877A_timer_1.c PIC16F877A_ServoMotor_Compare.c ServoMotor_Compare.c
 
 
 
@@ -88,6 +88,38 @@ MP_PROCESSOR_OPTION=16F877A
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
+${OBJECTDIR}/PIC16F877A_ADC.p1: PIC16F877A_ADC.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/PIC16F877A_ADC.p1.d 
+	@${RM} ${OBJECTDIR}/PIC16F877A_ADC.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/PIC16F877A_ADC.p1 PIC16F877A_ADC.c 
+	@-${MV} ${OBJECTDIR}/PIC16F877A_ADC.d ${OBJECTDIR}/PIC16F877A_ADC.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/PIC16F877A_ADC.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/PIC16F877A_UART.p1: PIC16F877A_UART.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/PIC16F877A_UART.p1.d 
+	@${RM} ${OBJECTDIR}/PIC16F877A_UART.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/PIC16F877A_UART.p1 PIC16F877A_UART.c 
+	@-${MV} ${OBJECTDIR}/PIC16F877A_UART.d ${OBJECTDIR}/PIC16F877A_UART.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/PIC16F877A_UART.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/PIC16F877A_timer_1.p1: PIC16F877A_timer_1.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/PIC16F877A_timer_1.p1.d 
+	@${RM} ${OBJECTDIR}/PIC16F877A_timer_1.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/PIC16F877A_timer_1.p1 PIC16F877A_timer_1.c 
+	@-${MV} ${OBJECTDIR}/PIC16F877A_timer_1.d ${OBJECTDIR}/PIC16F877A_timer_1.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/PIC16F877A_timer_1.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/PIC16F877A_ServoMotor_Compare.p1: PIC16F877A_ServoMotor_Compare.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/PIC16F877A_ServoMotor_Compare.p1.d 
+	@${RM} ${OBJECTDIR}/PIC16F877A_ServoMotor_Compare.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/PIC16F877A_ServoMotor_Compare.p1 PIC16F877A_ServoMotor_Compare.c 
+	@-${MV} ${OBJECTDIR}/PIC16F877A_ServoMotor_Compare.d ${OBJECTDIR}/PIC16F877A_ServoMotor_Compare.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/PIC16F877A_ServoMotor_Compare.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 ${OBJECTDIR}/ServoMotor_Compare.p1: ServoMotor_Compare.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/ServoMotor_Compare.p1.d 
@@ -96,31 +128,39 @@ ${OBJECTDIR}/ServoMotor_Compare.p1: ServoMotor_Compare.c  nbproject/Makefile-${C
 	@-${MV} ${OBJECTDIR}/ServoMotor_Compare.d ${OBJECTDIR}/ServoMotor_Compare.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/ServoMotor_Compare.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/UART.p1: UART.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/UART.p1.d 
-	@${RM} ${OBJECTDIR}/UART.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/UART.p1 UART.c 
-	@-${MV} ${OBJECTDIR}/UART.d ${OBJECTDIR}/UART.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/UART.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/XC8_Servo_Compare.p1: XC8_Servo_Compare.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/XC8_Servo_Compare.p1.d 
-	@${RM} ${OBJECTDIR}/XC8_Servo_Compare.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/XC8_Servo_Compare.p1 XC8_Servo_Compare.c 
-	@-${MV} ${OBJECTDIR}/XC8_Servo_Compare.d ${OBJECTDIR}/XC8_Servo_Compare.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/XC8_Servo_Compare.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/XC8_ADC.p1: XC8_ADC.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/XC8_ADC.p1.d 
-	@${RM} ${OBJECTDIR}/XC8_ADC.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/XC8_ADC.p1 XC8_ADC.c 
-	@-${MV} ${OBJECTDIR}/XC8_ADC.d ${OBJECTDIR}/XC8_ADC.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/XC8_ADC.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
 else
+${OBJECTDIR}/PIC16F877A_ADC.p1: PIC16F877A_ADC.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/PIC16F877A_ADC.p1.d 
+	@${RM} ${OBJECTDIR}/PIC16F877A_ADC.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/PIC16F877A_ADC.p1 PIC16F877A_ADC.c 
+	@-${MV} ${OBJECTDIR}/PIC16F877A_ADC.d ${OBJECTDIR}/PIC16F877A_ADC.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/PIC16F877A_ADC.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/PIC16F877A_UART.p1: PIC16F877A_UART.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/PIC16F877A_UART.p1.d 
+	@${RM} ${OBJECTDIR}/PIC16F877A_UART.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/PIC16F877A_UART.p1 PIC16F877A_UART.c 
+	@-${MV} ${OBJECTDIR}/PIC16F877A_UART.d ${OBJECTDIR}/PIC16F877A_UART.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/PIC16F877A_UART.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/PIC16F877A_timer_1.p1: PIC16F877A_timer_1.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/PIC16F877A_timer_1.p1.d 
+	@${RM} ${OBJECTDIR}/PIC16F877A_timer_1.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/PIC16F877A_timer_1.p1 PIC16F877A_timer_1.c 
+	@-${MV} ${OBJECTDIR}/PIC16F877A_timer_1.d ${OBJECTDIR}/PIC16F877A_timer_1.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/PIC16F877A_timer_1.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/PIC16F877A_ServoMotor_Compare.p1: PIC16F877A_ServoMotor_Compare.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/PIC16F877A_ServoMotor_Compare.p1.d 
+	@${RM} ${OBJECTDIR}/PIC16F877A_ServoMotor_Compare.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/PIC16F877A_ServoMotor_Compare.p1 PIC16F877A_ServoMotor_Compare.c 
+	@-${MV} ${OBJECTDIR}/PIC16F877A_ServoMotor_Compare.d ${OBJECTDIR}/PIC16F877A_ServoMotor_Compare.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/PIC16F877A_ServoMotor_Compare.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 ${OBJECTDIR}/ServoMotor_Compare.p1: ServoMotor_Compare.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/ServoMotor_Compare.p1.d 
@@ -128,30 +168,6 @@ ${OBJECTDIR}/ServoMotor_Compare.p1: ServoMotor_Compare.c  nbproject/Makefile-${C
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/ServoMotor_Compare.p1 ServoMotor_Compare.c 
 	@-${MV} ${OBJECTDIR}/ServoMotor_Compare.d ${OBJECTDIR}/ServoMotor_Compare.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/ServoMotor_Compare.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/UART.p1: UART.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/UART.p1.d 
-	@${RM} ${OBJECTDIR}/UART.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/UART.p1 UART.c 
-	@-${MV} ${OBJECTDIR}/UART.d ${OBJECTDIR}/UART.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/UART.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/XC8_Servo_Compare.p1: XC8_Servo_Compare.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/XC8_Servo_Compare.p1.d 
-	@${RM} ${OBJECTDIR}/XC8_Servo_Compare.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/XC8_Servo_Compare.p1 XC8_Servo_Compare.c 
-	@-${MV} ${OBJECTDIR}/XC8_Servo_Compare.d ${OBJECTDIR}/XC8_Servo_Compare.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/XC8_Servo_Compare.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/XC8_ADC.p1: XC8_ADC.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/XC8_ADC.p1.d 
-	@${RM} ${OBJECTDIR}/XC8_ADC.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/XC8_ADC.p1 XC8_ADC.c 
-	@-${MV} ${OBJECTDIR}/XC8_ADC.d ${OBJECTDIR}/XC8_ADC.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/XC8_ADC.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 

@@ -1,38 +1,63 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"2454 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 2454: extern volatile __bit CCP1M3 __attribute__((address(0xBB)));
-[v _CCP1M3 `Vb ~T0 @X0 0 e@187 ]
-"2451
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 2451: extern volatile __bit CCP1M2 __attribute__((address(0xBA)));
-[v _CCP1M2 `Vb ~T0 @X0 0 e@186 ]
-"2448
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 2448: extern volatile __bit CCP1M1 __attribute__((address(0xB9)));
-[v _CCP1M1 `Vb ~T0 @X0 0 e@185 ]
-"2445
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 2445: extern volatile __bit CCP1M0 __attribute__((address(0xB8)));
-[v _CCP1M0 `Vb ~T0 @X0 0 e@184 ]
-"886
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 886: extern volatile unsigned short CCPR1 __attribute__((address(0x015)));
-[v _CCPR1 `Vus ~T0 @X0 0 e@21 ]
-"2970
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 2970: extern volatile __bit TRISC2 __attribute__((address(0x43A)));
-[v _TRISC2 `Vb ~T0 @X0 0 e@1082 ]
-"2715
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 2715: extern volatile __bit RC2 __attribute__((address(0x3A)));
-[v _RC2 `Vb ~T0 @X0 0 e@58 ]
-"635
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 635: extern volatile unsigned short TMR1 __attribute__((address(0x00E)));
-[v _TMR1 `Vus ~T0 @X0 0 e@14 ]
-"22 ./PIC16F877A_timer_1.h
-[; ;./PIC16F877A_timer_1.h: 22: void timer1TimerInit(uint8_t prescaler);
-[v _timer1TimerInit `(v ~T0 @X0 0 ef1`uc ]
-"23 ServoMotor_Compare.c
-[; ;ServoMotor_Compare.c: 23:     timer1TimerInit(TIMER1_DIV_8);
-[c E878 0 1 2 3 .. ]
-[n E878 timer1_prescaler TIMER1_DIV_1 TIMER1_DIV_2 TIMER1_DIV_4 TIMER1_DIV_8  ]
-"907 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 907: extern volatile unsigned char CCP1CON __attribute__((address(0x017)));
-[v _CCP1CON `Vuc ~T0 @X0 0 e@23 ]
+[t ~ __interrupt . k ]
+[t T1 __interrupt ]
+"2895 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 2895: extern volatile __bit TMR1IF __attribute__((address(0x60)));
+[v _TMR1IF `Vb ~T0 @X0 0 e@96 ]
+"16 ./ServoMotor_compare.h
+[; ;./ServoMotor_compare.h: 16: void servoShiftHigh(void);
+[v _servoShiftHigh `(v ~T0 @X0 0 ef ]
+"2748 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 2748: extern volatile __bit RCIF __attribute__((address(0x65)));
+[v _RCIF `Vb ~T0 @X0 0 e@101 ]
+"16 ./PIC16F877A_UART.h
+[; ;./PIC16F877A_UART.h: 16: char UARTrcvChar(void);
+[v _UARTrcvChar `(uc ~T0 @X0 0 ef ]
+"24 PIC16F877A_ServoMotor_Compare.c
+[; ;PIC16F877A_ServoMotor_Compare.c: 24: void positionControl(uint8_t com);
+[v _positionControl `(v ~T0 @X0 0 ef1`uc ]
+[p mainexit ]
+"13 ./PIC16F877A_UART.h
+[; ;./PIC16F877A_UART.h: 13: void UARTTransRcvInit(void);
+[v _UARTTransRcvInit `(v ~T0 @X0 0 ef ]
+"9 ./PIC16F877A_ADC.h
+[; ;./PIC16F877A_ADC.h: 9: void ADC_Init(uint8_t* adc_channel, uint8_t len);
+[v _ADC_Init `(v ~T0 @X0 0 ef2`*uc`uc ]
+"14 ./ServoMotor_compare.h
+[; ;./ServoMotor_compare.h: 14: void servoInit(void);
+[v _servoInit `(v ~T0 @X0 0 ef ]
+"25 PIC16F877A_ServoMotor_Compare.c
+[; ;PIC16F877A_ServoMotor_Compare.c: 25: void adcPosControl(void);
+[v _adcPosControl `(v ~T0 @X0 0 ef ]
+[v F36 `(v ~T0 @X0 1 tf1`ul ]
+"12 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\builtins.h
+[v __delay `JF36 ~T0 @X0 0 e ]
+[p i __delay ]
+"15 ./ServoMotor_compare.h
+[; ;./ServoMotor_compare.h: 15: void servoAngle(uint8_t angle);
+[v _servoAngle `(v ~T0 @X0 0 ef1`uc ]
+"15 ./PIC16F877A_UART.h
+[; ;./PIC16F877A_UART.h: 15: void UARTsendString(char *str);
+[v _UARTsendString `(v ~T0 @X0 0 ef1`*uc ]
+"10 ./PIC16F877A_ADC.h
+[; ;./PIC16F877A_ADC.h: 10: uint16_t ADC_Read(uint8_t adc_channel);
+[v _ADC_Read `(ui ~T0 @X0 0 ef1`uc ]
+"5 ./config.h
+[p x FOSC  =  HS         ]
+"6
+[p x WDTE  =  OFF        ]
+"7
+[p x PWRTE  =  OFF       ]
+"8
+[p x BOREN  =  ON        ]
+"9
+[p x LVP  =  ON          ]
+"10
+[p x CPD  =  OFF         ]
+"11
+[p x WRT  =  OFF         ]
+"12
+[p x CP  =  OFF          ]
 "55 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 55: __asm("INDF equ 00h");
 [; <" INDF equ 00h ;# ">
@@ -225,115 +250,260 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _DC_RANGE
 -> -> 10000 `i `ui
 ]
-"4 ServoMotor_Compare.c
-[; ;ServoMotor_Compare.c: 4: static void compareInit()
-[v _compareInit `(v ~T0 @X0 1 sf ]
-"5
-[; ;ServoMotor_Compare.c: 5: {
-{
-[e :U _compareInit ]
-[f ]
-"7
-[; ;ServoMotor_Compare.c: 7:     CCP1M3 = 1;
-[e = _CCP1M3 -> -> 1 `i `b ]
-"8
-[; ;ServoMotor_Compare.c: 8:     CCP1M2 = 0;
-[e = _CCP1M2 -> -> 0 `i `b ]
-"9
-[; ;ServoMotor_Compare.c: 9:     CCP1M1 = 0;
-[e = _CCP1M1 -> -> 0 `i `b ]
-"10
-[; ;ServoMotor_Compare.c: 10:     CCP1M0 = 1;
-[e = _CCP1M0 -> -> 1 `i `b ]
-"12
-[; ;ServoMotor_Compare.c: 12:     CCPR1 = TIME1 + (DC_RANGE / 20);
-[e = _CCPR1 -> + _TIME1 / _DC_RANGE -> -> 20 `i `ui `us ]
-"13
-[; ;ServoMotor_Compare.c: 13: }
-[e :UE 95 ]
-}
-"16
-[; ;ServoMotor_Compare.c: 16: void servoInit()
-[v _servoInit `(v ~T0 @X0 1 ef ]
-"17
-[; ;ServoMotor_Compare.c: 17: {
-{
-[e :U _servoInit ]
-[f ]
-"19
-[; ;ServoMotor_Compare.c: 19:     TRISC2 = 0;
-[e = _TRISC2 -> -> 0 `i `b ]
-"20
-[; ;ServoMotor_Compare.c: 20:     RC2 = 1;
-[e = _RC2 -> -> 1 `i `b ]
-"22
-[; ;ServoMotor_Compare.c: 22:     TMR1 = TIME1;
-[e = _TMR1 -> _TIME1 `us ]
-"23
-[; ;ServoMotor_Compare.c: 23:     timer1TimerInit(TIMER1_DIV_8);
-[e ( _timer1TimerInit (1 -> . `E878 3 `uc ]
-"25
-[; ;ServoMotor_Compare.c: 25:     compareInit();
-[e ( _compareInit ..  ]
-"26
-[; ;ServoMotor_Compare.c: 26: }
-[e :UE 96 ]
-}
+"9 ./PIC16F877A_UART.h
+[; ;./PIC16F877A_UART.h: 9: static uint16_t uart_str_idx = 0;
+[v _uart_str_idx `ui ~T0 @X0 1 s ]
+[i _uart_str_idx
+-> -> 0 `i `ui
+]
+"18 PIC16F877A_ServoMotor_Compare.c
+[; ;PIC16F877A_ServoMotor_Compare.c: 18: uint8_t adc_channels[1] = {0};
+[v _adc_channels `uc ~T0 @X0 -> -> 1 `i `ux e ]
+[i _adc_channels
+:U ..
+-> -> 0 `i `uc
+..
+]
+"21
+[; ;PIC16F877A_ServoMotor_Compare.c: 21: uint8_t mode = 0;
+[v _mode `uc ~T0 @X0 1 e ]
+[i _mode
+-> -> 0 `i `uc
+]
+[v $root$_ISR `(v ~T0 @X0 0 e ]
 "29
-[; ;ServoMotor_Compare.c: 29: void servoAngle(uint8_t angle)
-[v _servoAngle `(v ~T0 @X0 1 ef1`uc ]
-"30
-[; ;ServoMotor_Compare.c: 30: {
+[; ;PIC16F877A_ServoMotor_Compare.c: 29: void __attribute__((picinterrupt(("")))) ISR(void){
+[v _ISR `(v ~T1 @X0 1 ef ]
 {
-[e :U _servoAngle ]
-"29
-[; ;ServoMotor_Compare.c: 29: void servoAngle(uint8_t angle)
-[v _angle `uc ~T0 @X0 1 r1 ]
-"30
-[; ;ServoMotor_Compare.c: 30: {
+[e :U _ISR ]
 [f ]
 "31
-[; ;ServoMotor_Compare.c: 31:     if(angle <= 180)
-[e $ ! <= -> _angle `i -> 180 `i 98  ]
+[; ;PIC16F877A_ServoMotor_Compare.c: 31:     if(TMR1IF)
+[e $ ! _TMR1IF 97  ]
 "32
-[; ;ServoMotor_Compare.c: 32:     {
+[; ;PIC16F877A_ServoMotor_Compare.c: 32:     {
 {
-"33
-[; ;ServoMotor_Compare.c: 33:         uint16_t duty_cycle = (uint16_t)((100 * angle) / 36.0) + TIME1 + (DC_RANGE / 20);
-[v _duty_cycle `ui ~T0 @X0 1 a ]
-[e = _duty_cycle + + -> / -> * -> 100 `i -> _angle `i `d .36.0 `ui _TIME1 / _DC_RANGE -> -> 20 `i `ui ]
 "34
-[; ;ServoMotor_Compare.c: 34:         CCPR1 = duty_cycle;
-[e = _CCPR1 -> _duty_cycle `us ]
-"35
-[; ;ServoMotor_Compare.c: 35:     }
+[; ;PIC16F877A_ServoMotor_Compare.c: 34:         servoShiftHigh();
+[e ( _servoShiftHigh ..  ]
+"36
+[; ;PIC16F877A_ServoMotor_Compare.c: 36:         TMR1IF = 0;
+[e = _TMR1IF -> -> 0 `i `b ]
+"37
+[; ;PIC16F877A_ServoMotor_Compare.c: 37:     }
+}
+[e :U 97 ]
+"39
+[; ;PIC16F877A_ServoMotor_Compare.c: 39:     if(RCIF){
+[e $ ! _RCIF 98  ]
+{
+"40
+[; ;PIC16F877A_ServoMotor_Compare.c: 40:         uint8_t command = UARTrcvChar();
+[v _command `uc ~T0 @X0 1 a ]
+[e = _command -> ( _UARTrcvChar ..  `uc ]
+"41
+[; ;PIC16F877A_ServoMotor_Compare.c: 41:         if(command == 97)
+[e $ ! == -> _command `i -> 97 `i 99  ]
+"42
+[; ;PIC16F877A_ServoMotor_Compare.c: 42:             mode = 0;
+[e = _mode -> -> 0 `i `uc ]
+[e $U 100  ]
+"43
+[; ;PIC16F877A_ServoMotor_Compare.c: 43:         else
+[e :U 99 ]
+"44
+[; ;PIC16F877A_ServoMotor_Compare.c: 44:         {
+{
+"45
+[; ;PIC16F877A_ServoMotor_Compare.c: 45:             mode = 1;
+[e = _mode -> -> 1 `i `uc ]
+"46
+[; ;PIC16F877A_ServoMotor_Compare.c: 46:             positionControl(command);
+[e ( _positionControl (1 _command ]
+"47
+[; ;PIC16F877A_ServoMotor_Compare.c: 47:         }
+}
+[e :U 100 ]
+"48
+[; ;PIC16F877A_ServoMotor_Compare.c: 48:     }
 }
 [e :U 98 ]
-"36
-[; ;ServoMotor_Compare.c: 36: }
-[e :UE 97 ]
-}
-"39
-[; ;ServoMotor_Compare.c: 39: void servoShiftHigh()
-[v _servoShiftHigh `(v ~T0 @X0 1 ef ]
-"40
-[; ;ServoMotor_Compare.c: 40: {
-{
-[e :U _servoShiftHigh ]
-[f ]
-"42
-[; ;ServoMotor_Compare.c: 42:     TMR1 = TIME1;
-[e = _TMR1 -> _TIME1 `us ]
-"44
-[; ;ServoMotor_Compare.c: 44:     CCP1CON = 0x00;
-[e = _CCP1CON -> -> 0 `i `uc ]
-"46
-[; ;ServoMotor_Compare.c: 46:     RC2 = 1;
-[e = _RC2 -> -> 1 `i `b ]
-"48
-[; ;ServoMotor_Compare.c: 48:     CCP1CON = 0x09;
-[e = _CCP1CON -> -> 9 `i `uc ]
 "49
-[; ;ServoMotor_Compare.c: 49: }
-[e :UE 99 ]
+[; ;PIC16F877A_ServoMotor_Compare.c: 49: }
+[e :UE 96 ]
 }
+[v $root$_main `(v ~T0 @X0 0 e ]
+"51
+[; ;PIC16F877A_ServoMotor_Compare.c: 51: void main(void) {
+[v _main `(v ~T0 @X0 1 ef ]
+{
+[e :U _main ]
+[f ]
+"53
+[; ;PIC16F877A_ServoMotor_Compare.c: 53:     UARTTransRcvInit();
+[e ( _UARTTransRcvInit ..  ]
+"55
+[; ;PIC16F877A_ServoMotor_Compare.c: 55:     ADC_Init(adc_channels, 1);
+[e ( _ADC_Init (2 , &U _adc_channels -> -> 1 `i `uc ]
+"57
+[; ;PIC16F877A_ServoMotor_Compare.c: 57:     servoInit();
+[e ( _servoInit ..  ]
+"60
+[; ;PIC16F877A_ServoMotor_Compare.c: 60:     while(1)
+[e :U 103 ]
+"61
+[; ;PIC16F877A_ServoMotor_Compare.c: 61:     {
+{
+"62
+[; ;PIC16F877A_ServoMotor_Compare.c: 62:         if(mode == 0){
+[e $ ! == -> _mode `i -> 0 `i 105  ]
+{
+"63
+[; ;PIC16F877A_ServoMotor_Compare.c: 63:             adcPosControl();
+[e ( _adcPosControl ..  ]
+"64
+[; ;PIC16F877A_ServoMotor_Compare.c: 64:             _delay((unsigned long)((250)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"65
+[; ;PIC16F877A_ServoMotor_Compare.c: 65:         }
+}
+[e :U 105 ]
+"66
+[; ;PIC16F877A_ServoMotor_Compare.c: 66:     }
+}
+[e :U 102 ]
+[e $U 103  ]
+[e :U 104 ]
+"67
+[; ;PIC16F877A_ServoMotor_Compare.c: 67:     return;
+[e $UE 101  ]
+"68
+[; ;PIC16F877A_ServoMotor_Compare.c: 68: }
+[e :UE 101 ]
+}
+"71
+[; ;PIC16F877A_ServoMotor_Compare.c: 71: void positionControl(uint8_t com)
+[v _positionControl `(v ~T0 @X0 1 ef1`uc ]
+"72
+[; ;PIC16F877A_ServoMotor_Compare.c: 72: {
+{
+[e :U _positionControl ]
+"71
+[; ;PIC16F877A_ServoMotor_Compare.c: 71: void positionControl(uint8_t com)
+[v _com `uc ~T0 @X0 1 r1 ]
+"72
+[; ;PIC16F877A_ServoMotor_Compare.c: 72: {
+[f ]
+"73
+[; ;PIC16F877A_ServoMotor_Compare.c: 73:     if(com == 48)
+[e $ ! == -> _com `i -> 48 `i 107  ]
+"74
+[; ;PIC16F877A_ServoMotor_Compare.c: 74:         servoAngle(0);
+[e ( _servoAngle (1 -> -> 0 `i `uc ]
+[e $U 108  ]
+"75
+[; ;PIC16F877A_ServoMotor_Compare.c: 75:     else if(com == 49)
+[e :U 107 ]
+[e $ ! == -> _com `i -> 49 `i 109  ]
+"76
+[; ;PIC16F877A_ServoMotor_Compare.c: 76:         servoAngle(30);
+[e ( _servoAngle (1 -> -> 30 `i `uc ]
+[e $U 110  ]
+"77
+[; ;PIC16F877A_ServoMotor_Compare.c: 77:     else if(com == 50)
+[e :U 109 ]
+[e $ ! == -> _com `i -> 50 `i 111  ]
+"78
+[; ;PIC16F877A_ServoMotor_Compare.c: 78:         servoAngle(45);
+[e ( _servoAngle (1 -> -> 45 `i `uc ]
+[e $U 112  ]
+"79
+[; ;PIC16F877A_ServoMotor_Compare.c: 79:     else if(com == 51)
+[e :U 111 ]
+[e $ ! == -> _com `i -> 51 `i 113  ]
+"80
+[; ;PIC16F877A_ServoMotor_Compare.c: 80:         servoAngle(90);
+[e ( _servoAngle (1 -> -> 90 `i `uc ]
+[e $U 114  ]
+"81
+[; ;PIC16F877A_ServoMotor_Compare.c: 81:     else if(com == 52)
+[e :U 113 ]
+[e $ ! == -> _com `i -> 52 `i 115  ]
+"82
+[; ;PIC16F877A_ServoMotor_Compare.c: 82:         servoAngle(120);
+[e ( _servoAngle (1 -> -> 120 `i `uc ]
+[e $U 116  ]
+"83
+[; ;PIC16F877A_ServoMotor_Compare.c: 83:     else if(com == 53)
+[e :U 115 ]
+[e $ ! == -> _com `i -> 53 `i 117  ]
+"84
+[; ;PIC16F877A_ServoMotor_Compare.c: 84:         servoAngle(150);
+[e ( _servoAngle (1 -> -> 150 `i `uc ]
+[e $U 118  ]
+"85
+[; ;PIC16F877A_ServoMotor_Compare.c: 85:     else if(com == 54)
+[e :U 117 ]
+[e $ ! == -> _com `i -> 54 `i 119  ]
+"86
+[; ;PIC16F877A_ServoMotor_Compare.c: 86:         servoAngle(180);
+[e ( _servoAngle (1 -> -> 180 `i `uc ]
+[e $U 120  ]
+"87
+[; ;PIC16F877A_ServoMotor_Compare.c: 87:     else
+[e :U 119 ]
+"88
+[; ;PIC16F877A_ServoMotor_Compare.c: 88:     {
+{
+"89
+[; ;PIC16F877A_ServoMotor_Compare.c: 89:         UARTsendString("Invalid input!\r\n");
+[e ( _UARTsendString (1 :s 1C ]
+"90
+[; ;PIC16F877A_ServoMotor_Compare.c: 90:         return;
+[e $UE 106  ]
+"91
+[; ;PIC16F877A_ServoMotor_Compare.c: 91:     }
+}
+[e :U 120 ]
+[e :U 118 ]
+[e :U 116 ]
+[e :U 114 ]
+[e :U 112 ]
+[e :U 110 ]
+[e :U 108 ]
+"92
+[; ;PIC16F877A_ServoMotor_Compare.c: 92:     UARTsendString("Completed!\r\n");
+[e ( _UARTsendString (1 :s 2C ]
+"93
+[; ;PIC16F877A_ServoMotor_Compare.c: 93: }
+[e :UE 106 ]
+}
+"96
+[; ;PIC16F877A_ServoMotor_Compare.c: 96: void adcPosControl()
+[v _adcPosControl `(v ~T0 @X0 1 ef ]
+"97
+[; ;PIC16F877A_ServoMotor_Compare.c: 97: {
+{
+[e :U _adcPosControl ]
+[f ]
+"99
+[; ;PIC16F877A_ServoMotor_Compare.c: 99:     uint16_t pot_value = ADC_Read(0);
+[v _pot_value `ui ~T0 @X0 1 a ]
+[e = _pot_value ( _ADC_Read (1 -> -> 0 `i `uc ]
+"101
+[; ;PIC16F877A_ServoMotor_Compare.c: 101:     float adc_val = (pot_value / 1023.0f) * 180;
+[v _adc_val `f ~T0 @X0 1 a ]
+[e = _adc_val * / -> _pot_value `f -> .1023.0 `f -> -> 180 `i `f ]
+"102
+[; ;PIC16F877A_ServoMotor_Compare.c: 102:     uint8_t adc_angle = (uint8_t)adc_val;
+[v _adc_angle `uc ~T0 @X0 1 a ]
+[e = _adc_angle -> _adc_val `uc ]
+"103
+[; ;PIC16F877A_ServoMotor_Compare.c: 103:     servoAngle(adc_angle);
+[e ( _servoAngle (1 _adc_angle ]
+"104
+[; ;PIC16F877A_ServoMotor_Compare.c: 104: }
+[e :UE 121 ]
+}
+[a 1C 73 110 118 97 108 105 100 32 105 110 112 117 116 33 13 10 0 ]
+[a 2C 67 111 109 112 108 101 116 101 100 33 13 10 0 ]

@@ -1,4 +1,4 @@
-# 1 "XC8_ADC.c"
+# 1 "PIC16F877A_ADC.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,9 +6,11 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "XC8_ADC.c" 2
-# 1 "./XC8_ADC.h" 1
-# 38 "./XC8_ADC.h"
+# 1 "PIC16F877A_ADC.c" 2
+# 1 "./PIC16F877A_ADC.h" 1
+
+
+
 # 1 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -1855,40 +1857,77 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 2 3
-# 38 "./XC8_ADC.h" 2
-
-
-void ADC_Init(void);
-unsigned int ADC_Read(uint8_t ANC);
-# 1 "XC8_ADC.c" 2
-
-# 1 "./UART.h" 1
-# 84 "./UART.h"
-void UART_Init(void);
-void UART_sendChar(char data);
-void UART_sendByte(uint8_t data);
-void UART_sendString(char* str);
-void UART_sendData(uint8_t* str, uint8_t len);
-# 2 "XC8_ADC.c" 2
+# 4 "./PIC16F877A_ADC.h" 2
 
 
 
-void ADC_Init()
+
+
+void ADC_Init(uint8_t* adc_channel, uint8_t len);
+uint16_t ADC_Read(uint8_t adc_channel);
+float ADC_lm35toDeg(uint16_t negative_deg, uint16_t positive_deg);
+# 1 "PIC16F877A_ADC.c" 2
+
+
+
+
+static void ADC_setInput(uint8_t* adc_channel, uint8_t len)
 {
-    ADCON0 = 0b01000001;
-    ADCON1 = 0x80;
+    for(uint8_t i = 0; i < len; ++i)
+    {
+        switch(adc_channel[i])
+        {
+            case 0:
+                TRISA0 = 1;
+                break;
+            case 1:
+                TRISA1 = 1;
+                break;
+            case 2:
+                TRISA2 = 1;
+                break;
+            case 3:
+                TRISA3 = 1;
+                break;
+            case 4:
+                TRISA5 = 1;
+                break;
+            case 5:
+                TRISE0 = 1;
+                break;
+            case 6:
+                TRISE1 = 1;
+                break;
+            case 7:
+                TRISE2 = 1;
+                break;
+        }
+    }
+    return;
 }
 
 
-unsigned int ADC_Read(uint8_t ANC){
 
-    if((ANC < 0) || (ANC > 7)){
+
+void ADC_Init(uint8_t* adc_channel, uint8_t len)
+{
+
+    ADC_setInput(adc_channel, len);
+
+    ADCON0 = 0x81;
+    ADCON1 = 0xC0;
+}
+
+
+uint16_t ADC_Read(uint8_t adc_channel)
+{
+    if(adc_channel > 7)
         return 0;
-    }
+
 
     ADCON0 &= 0b11000101;
 
-    ADCON0 |= ANC<<3;
+    ADCON0 |= adc_channel << 3;
 
     _delay((unsigned long)((30)*(16000000/4000000.0)));
 
@@ -1896,4 +1935,10 @@ unsigned int ADC_Read(uint8_t ANC){
 
     while(ADCON0bits.GO_DONE);
     return ((ADRESH << 8) + ADRESL);
+}
+
+
+float ADC_lm35toDeg(uint16_t negative_deg, uint16_t positive_deg)
+{
+    return (positive_deg - negative_deg) * 500 / 1023.0f;
 }
